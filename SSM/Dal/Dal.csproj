@@ -45,12 +45,19 @@
     <Compile Include="D_Jinpo.cs" />
     <Compile Include="D_LoginSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="学习资料\原生方法DataHelper.cs" />
+    <Compile Include="学习资料\查询流程.cs" />
+    <Compile Include="学习资料\自定义方法.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{1224b4d3-c719-4757-ab9f-edd2f6d9ba6d}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="学习资料\C#连接sql数据库执行简单的增删改查操作.pdf" />
+    <None Include="学习资料\WPF编程宝典C#2012 第4版2.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

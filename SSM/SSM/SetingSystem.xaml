@@ -1,0 +1,48 @@
+﻿<Window x:Class="SSM.SetingSystem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SSM"
+        mc:Ignorable="d"
+        Title="SetingSystem" WindowStartupLocation="CenterScreen" Height="370" Width="400" WindowStyle="None" Background="#FFD6DBE9"   Style="{StaticResource for_noresize_window}">
+    <Grid Name="Seting_win">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="82*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Left" Height="275" Margin="5,10,0,0" VerticalAlignment="Top" Width="382" Background="#FFEAECF7" Grid.Row="1" Grid.RowSpan="6">
+            <Border BorderBrush="#FF8DA0A4" BorderThickness="1">
+
+
+            </Border>
+        </Grid>
+        <Label Content="设置" HorizontalAlignment="Left" Margin="35,3,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FF5B5454" Grid.RowSpan="2" />
+        <Label Content="数据库IP：" Margin="42,23,251,0" Grid.Row="1" FontSize="16" Height="35" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox Name="Win_DataBaseIP" TextWrapping="Wrap"  Grid.Row="1" FontSize="14" Height="25" VerticalAlignment="Top" Margin="128,26,22,0"/>
+        <Label Content="数据库实例：" Margin="26,23,252,0" Grid.Row="2" FontSize="16" Height="35" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox Name="Win_DataBaseInstance" TextWrapping="Wrap"  Grid.Row="2" FontSize="14" Height="25" VerticalAlignment="Top" Margin="128,26,22,0"/>
+        <Label Content="数据库名称：" Margin="27,23,250,0" Grid.Row="3" FontSize="16" Height="35" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox Name="Win_DataBaseName"  TextWrapping="Wrap"  Grid.Row="3" Height="25" VerticalAlignment="Top" Margin="128,26,22,0" FontSize="15" FontFamily="Open Sans"/>
+        <Label Content="数据库用户：" Margin="25,23,251,0" Grid.Row="4" FontSize="16" Height="35" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox Name="Win_DataBaseUser" TextWrapping="Wrap"  Grid.Row="4" FontSize="14" Height="25" VerticalAlignment="Top" Margin="128,26,22,0"/>
+        <Label Content="数据库密码：" Margin="26,23,250,0" Grid.Row="5" FontSize="16" Height="35" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <PasswordBox Name="Win_DataBasePassword"  Grid.Row="5" FontSize="14" Height="25" VerticalAlignment="Top" Margin="128,26,22,0" />
+        <Button Content="保存" HorizontalAlignment="Left" Margin="270,13,0,0" Grid.Row="6" VerticalAlignment="Top" Width="100" Height="37" BorderBrush="#FF918686" Background="#FFC3CCE8" FontSize="20" Click="Seting_Win_Save_Letf_Down"/>
+        <Grid Name="Grid_Close" Margin="355,0,0,0" Background="#FFD6DBE9"
+              PreviewMouseLeftButtonDown="Seting_Win_Close_left_Down"
+              MouseEnter="Seting_Win_Close_Mouse_Enter" 
+              MouseLeave="Seting_Win_Close_Mouse_Leave">
+            <Image Name="Image_Close" Source="resources/Picture/Login/SystemClose.png"  Margin="6" />
+        </Grid>
+        <Grid Name="Message_Close" Visibility="Hidden" HorizontalAlignment="Left" Height="21" Margin="340,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="40" Background="#FFE8E8E8">
+            <Border BorderBrush="DarkGray" BorderThickness="1"/>
+            <Label Content="关闭" HorizontalAlignment="Left" Foreground="#FF3E3B3B" FontSize="10" Margin="5,0,0,0"  />
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,5 @@
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Model\bin\Debug\Model.dll
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Model\bin\Debug\Model.pdb
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Model\obj\Debug\Model.dll
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Model\obj\Debug\Model.pdb

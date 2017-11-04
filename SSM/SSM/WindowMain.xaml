@@ -1,0 +1,201 @@
+﻿<Window x:Class="SSM.WindowMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SSM"
+        mc:Ignorable="d" Height="805" Width="1250"  Foreground="#FFFFFBFB" 
+        Style="{StaticResource for_noresize_window2}"
+        Loaded="WindowMain_Loaded" WindowStartupLocation="CenterScreen" WindowState="Maximized"  ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" >
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="690*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
+        <DockPanel   Grid.ColumnSpan="2"  VerticalAlignment="Top" Background="White" 
+                     MouseDown="Win_mouser_double_click" Height="29"
+                     >
+            <Button Content="Ztext"    HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="10,0,0,0" Click="onling_ztext" Background="#FFF11C1C" />
+            <DockPanel   Width="30" HorizontalAlignment="Right"   Margin="0,0,1,0" Background="#FFBFDC3E"  >
+                <Button Content="×"  Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Top"   BorderBrush="White" Background="#FFF35757" FontStretch="SemiExpanded" FontFamily="STKaiti" FontWeight="Bold" Click="WindowMain_Exit" Width="30" Height="29"/>
+            </DockPanel>
+
+        </DockPanel>
+        <Border Grid.Row="1" Grid.ColumnSpan="2" BorderBrush="Silver" BorderThickness="1"></Border>
+        <Border Grid.Row="2" BorderBrush="Silver" BorderThickness="0,0,1,1"></Border>
+
+        <Label Content="菜 单" HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Wide Latin" FontSize="18" Margin="80,7,80,10" Height="32" Width="50"/>
+
+
+        <!--菜单项目-->
+        <DockPanel Name="Staff_maintenance_Btn" Grid.Row="3" Height="50"   VerticalAlignment="Top" Margin="0,0,0,0"
+                   PreviewMouseLeftButtonDown="one_mune_btn_left_down"
+                   MouseEnter="one_mune_btn_Enter"
+                   MouseLeave="one_mune_btn_Leave"
+                   >
+            <Label Content="参保人员维护"  VerticalAlignment="Center"  HorizontalAlignment="Center" FontSize="16" FontFamily="Yu Gothic UI"/>
+
+        </DockPanel>
+        <DockPanel Name="Payment_btn" Grid.Row="3" Height="50"  VerticalAlignment="Top" Margin="0,52,0,0" 
+                   PreviewMouseLeftButtonDown="two_mune_btn_left_down"
+                   MouseEnter="two_mune_btn_Enter"
+                   MouseLeave="two_mune_btn_Leave"
+                   >
+            <Label Content="缴费"  VerticalAlignment="Center"  HorizontalAlignment="Center" FontSize="16" FontFamily="Yu Gothic UI"/>
+
+        </DockPanel>
+        <DockPanel Name="Payment_record" Grid.Row="3" Height="50"  VerticalAlignment="Top" Margin="0,104,0,0" 
+                   PreviewMouseLeftButtonDown="three_mune_btn_left_down"
+                   MouseEnter="three_mune_btn_Enter"
+                   MouseLeave="three_mune_btn_Leave"
+                   >
+            <Label Content="缴费记录"  VerticalAlignment="Center"  HorizontalAlignment="Center" FontSize="16" FontFamily="Yu Gothic UI"/>
+        </DockPanel>
+        <!--菜单项结束-->
+
+        <!--没点击右键菜单则显示主页-->
+        <Grid Name="GridView_0" Visibility="Visible" Grid.Row="3" Grid.Column="1" Background="White">
+            <Label Content="欢迎进入社保管理软件" HorizontalAlignment="Center"   VerticalAlignment="Center" FontSize="48" FontWeight="Bold" FontFamily="Yu Gothic UI" Margin="280,146,266,485"/>
+        </Grid>
+
+        <!--点击左键菜单中的参保人员维护-->
+        <Grid Name="GridView_1" Visibility="Visible" Grid.Row="2"   Grid.Column="1"  Margin="0,1,0,0" Grid.RowSpan="2">
+            <Grid Name="GridView_1_left" Visibility="Visible"  Background="White" Grid.Row="0" Grid.Column="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="115*"/>
+                </Grid.RowDefinitions>
+
+
+                <ComboBox Name="GridView_1_dropdowntype" HorizontalAlignment="Left" Margin="40,14,0,10" VerticalAlignment="Center" Width="97" Height="24" FontFamily="Consolas" FontSize="16" >
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                    <ComboBoxItem IsSelected="True">个人编号</ComboBoxItem>
+                    <ComboBoxItem >姓名</ComboBoxItem>
+                </ComboBox>
+                <TextBox Name="GridView_1_input_Scan" HorizontalAlignment="Left" Height="24" Margin="140,14,0,10" TextWrapping="Wrap"   VerticalAlignment="Center" Width="130"/>
+                <Button Click="CleckScanData" Content="查询" HorizontalAlignment="Left" Margin="280,10,0,5" VerticalAlignment="Center" Width="40" Height="33" Background="#FFCAD2EC"/>
+                <Button Click="Deleted_btn" Content="删除" HorizontalAlignment="Left" Margin="330,10,0,5" VerticalAlignment="Center" Width="40" Height="33" Background="#FFDA7075"/>
+                <Button   Content="编辑" HorizontalAlignment="Left" Margin="380,10,0,5" VerticalAlignment="Center" Width="40" Height="33" Background="#FFF3E292"
+                        Click="Edit_Data_Win"/>
+                <Button Content="添加" HorizontalAlignment="Left" Margin="430,10,0,5" VerticalAlignment="Center" Width="40" Height="33" Background="#FF407CE6" 
+                        Click="Add_Data_Win"/>
+
+
+
+                <DataGrid  Name="DataGrid1"  Grid.Row="1" Grid.Column="0"  AutoGenerateColumns="False"   SelectionMode="Single" VerticalGridLinesBrush="#FFB6B0B0"  DataGridRow.MouseUp="OrderinfodataGrid_Click" SelectedIndex="1" >
+                    <DataGrid.Columns >
+                        <DataGridTemplateColumn Header="操作" Width="5*" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="个人编号" Width="10*" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock  Text="{Binding Path=ID}" ></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="姓名" Width="10*" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock  Text="{Binding Path=JinpoName}" ></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="缴纳金额" Width="10*" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock  Text="{Binding Path=JinpoManey}" ></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="缴费方式" Width="10*" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock  Text="{Binding Path=JinpoPayState}" ></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="联系方式" Width="10*"  >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <TextBlock  Text="{Binding Path=JinpoPhone}"  HorizontalAlignment="Center" ></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                
+                
+
+                <TextBlock Grid.Column="1"  HorizontalAlignment="Left"  Margin="17,12,0,0"   Text="个人编号："   VerticalAlignment="Top" Foreground="#FF190A0A" FontSize="16" Grid.Row="1"/>
+                <TextBlock Grid.Column="1"  HorizontalAlignment="Left"  Margin="17,47,0,0"   Text="    姓名："   VerticalAlignment="Top" Foreground="#FF190A0A" Width="83" FontSize="16" Grid.Row="1" />
+                <TextBlock Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  Margin="17,86,0,0"   Text="  档案号："   VerticalAlignment="Top" Foreground="#FF190A0A" Width="81" FontSize="16"/>
+                <TextBlock Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  Margin="17,125,0,0"   Text="身份证号："  VerticalAlignment="Top"  Foreground="#FF190A0A" FontSize="16"/>
+                <TextBlock Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  Margin="17,164,0,0"   Text="缴费方式："  VerticalAlignment="Top"  Foreground="#FF190A0A" FontSize="16"/>
+                <TextBlock Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  Margin="17,204,0,0"   Text="参保方式：" VerticalAlignment="Top"  Foreground="#FF190A0A" FontSize="16"/>
+                <TextBlock Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"  Margin="17,241,0,0"   Text="联系方式：" VerticalAlignment="Top"  Foreground="#FF190A0A" FontSize="16" Height="22"/>
+
+                <TextBox Grid.Column="1" Name="input_ID" HorizontalAlignment="Left" Height="25" Margin="99,11,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="140" FontSize="18" IsReadOnly="True" Background="#FFF0F0F0" Grid.Row="1"/>
+                <TextBox Grid.Column="1" Name="NAME_one" HorizontalAlignment="Left" Height="25" Margin="99,45,0,0"    VerticalAlignment="Top" Width="140" FontSize="18" IsReadOnly="True" Background="#FFF0F0F0" Grid.Row="1"/>
+                <TextBox Grid.Column="1" Name="one_num" HorizontalAlignment="Left" Height="25" Margin="99,82,0,0" Grid.Row="1" TextWrapping="Wrap"   VerticalAlignment="Top" Width="140" FontSize="18" IsReadOnly="True" Background="#FFF0F0F0"/>
+                <TextBox Grid.Column="1" Name="two_num" HorizontalAlignment="Left" Height="25" Margin="99,121,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140" FontSize="18" IsReadOnly="True" Background="#FFF0F0F0"/>
+                <TextBox Grid.Column="1" Name="one_state" HorizontalAlignment="Left" Height="25" Margin="99,160,0,0" Grid.Row="1" TextWrapping="Wrap"   VerticalAlignment="Top" Width="140" FontSize="18" IsReadOnly="True" Background="#FFF0F0F0"/>
+                <TextBox Grid.Column="1" Name="two_state" HorizontalAlignment="Left" Height="25" Margin="99,200,0,0" Grid.Row="1" TextWrapping="Wrap"   VerticalAlignment="Top" Width="140" FontSize="18" IsReadOnly="True" Background="#FFF0F0F0" />
+                <TextBox Grid.Column="1" Name="phonenumber" HorizontalAlignment="Left" Height="25" Margin="99,238,0,0" Grid.Row="1" TextWrapping="Wrap"   VerticalAlignment="Top" Width="140" FontSize="18" IsReadOnly="True" Background="#FFF0F0F0"/>
+
+
+
+
+
+
+
+
+
+
+
+
+            </Grid>
+            <Grid Name="GridView_1_right"></Grid>
+        </Grid>
+        <!--点击左键菜单中的缴费按钮-->
+        <Grid Name="GridView_2" Visibility="Hidden" Grid.Row="3" Grid.Column="1" Background="#FF009B94" />
+        <!--点击左键菜单中的缴费记录-->
+        <Grid Name="GridView_3" Visibility="Hidden" Grid.Row="3" Grid.Column="1" Background="#FFAA33B6" />
+        <Border Grid.Row="3" BorderBrush="Silver" BorderThickness="0,0,1,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,72 @@
+﻿<Window x:Class="SSM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SSM"
+        mc:Ignorable="d" Height="410" Width="360" WindowStyle="None" Background="#FFF9F9F9" ResizeMode="NoResize"
+        Style="{StaticResource for_noresize_window}">
+
+    <Window.Resources>
+        <LinearGradientBrush x:Key="MyGradientBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFCCD4ED" Offset="0.555"/>
+            <GradientStop Color="#FFFAFDFD" Offset="0.875"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+
+
+    <Grid Name="Grid_Login_Frist" Background="#FFD6DBE9" MouseLeftButtonDown="Mouse_Left_Click_down">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="130*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Label Content="登录" HorizontalAlignment="Left"   VerticalAlignment="Top" Grid.Row="0" Foreground="#FF5B5656" FontSize="14" Margin="11,8,0,0" Height="26" Width="38"/>
+        <Label Content="社保管理软件" HorizontalAlignment="Left" Margin="40,0,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="31" FontFamily="Global Sans Serif" Foreground="#FF6A6A6A" Height="47" Width="196"/>
+
+        <!--图片右上角标签栏//!开始-->
+        <Grid HorizontalAlignment="Left" Background="Yellow"  Height="40" Margin="260,0,0,0" VerticalAlignment="Top" Width="80">
+            <Grid  Name="wara_Set" Height="40" Margin="0,0,40,0" Background="#FFD6DBE9"
+                        MouseEnter="Login_Win_Set_Mouse_Enter"
+                        PreviewMouseLeftButtonDown="Login_Seting_Left_Down"
+                        MouseLeave="Login_Win_Set_Mouse_Leave">
+                <Image Name="Image_Set" Source="resources/Picture/Login/SystemSet.png" Margin="12" />
+            </Grid>
+            <Grid Name="wara_Close" Height="40" Width="40" Margin="40,0,0,0" Background="#FFD6DBE9"  
+                       PreviewMouseLeftButtonDown="Login_Win_Close_Left_Down"
+                       PreviewMouseDown="login_win_mouse_down"
+                       MouseEnter="Login_Win_Close_Mouse_Enter" 
+                       MouseLeave="Login_Win_Close_Mouse_Leave"
+                      
+                       >
+                <Image Name="Image_Close" Source="resources/Picture/Login/SystemClose.png"  Margin="12" />
+            </Grid>
+        </Grid>
+
+        <Grid Name="Message_Set" Visibility="Hidden" HorizontalAlignment="Left" Height="18" Margin="268,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="25">
+            <Border BorderBrush="DarkGray" BorderThickness="1"></Border>
+            <Label Content="设置" HorizontalAlignment="Left" FontSize="7" Foreground="#FF3E3B3B"  />
+        </Grid>
+        <Grid Name="Message_Close" Visibility="Hidden" HorizontalAlignment="Left" Height="18" Margin="310,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="25">
+            <Border BorderBrush="DarkGray" BorderThickness="1"></Border>
+            <Label Content="关闭" HorizontalAlignment="Left" FontSize="7" Foreground="#FF3E3B3B"  />
+        </Grid>
+        <!--图片右上角标签栏//!结束-->
+        <TextBox  Name="username" HorizontalAlignment="Left" Height="55" Margin="30,5,0,0" Grid.Row="3" TextWrapping="Wrap" Text="supperadmin" VerticalAlignment="Top" Width="285" FontSize="28" FontFamily="Consolas" VerticalContentAlignment="Center" Background="LightGray" BorderBrush="#FFFEFEFF" PreviewMouseLeftButtonDown="user_output_text"/>
+        <PasswordBox Name="password" HorizontalAlignment="Left" Height="55" Margin="30,65,0,0" Grid.Row="3"  Password="123456" VerticalAlignment="Top" Width="285" FontSize="42" FontFamily="Cooper Black" VerticalContentAlignment="Center" Background="LightGray" BorderBrush="#FFFEFEFF" PreviewMouseLeftButtonDown="password_output_text"/>
+
+        <Button Content="登陆" Name="Ok_Login_btn" HorizontalAlignment="Left" Height="54" Margin="160,0,0,0" Grid.Row="5" VerticalAlignment="Top" Width="155" 
+              PreviewMouseLeftButtonDown="Login_OK_left_down" Background="#FFC3CCE8" FontSize="27" Foreground="#FF4F504F" BorderBrush="#FFA9A9AD"/>
+
+
+
+
+
+    </Grid>
+
+</Window>
+

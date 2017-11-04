@@ -1,0 +1,8 @@
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\bin\Debug\Dal.dll
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\bin\Debug\Dal.pdb
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\bin\Debug\Model.dll
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\bin\Debug\Model.pdb
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\obj\Debug\Dal.csprojResolveAssemblyReference.cache
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\obj\Debug\Dal.dll
+C:\Users\Aiyero\Desktop\SocialSecurityManagement\SSM\Dal\obj\Debug\Dal.pdb

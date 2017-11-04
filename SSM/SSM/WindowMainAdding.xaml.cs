@@ -38,12 +38,30 @@ namespace SSM
             mode.JinpoName = JinpoNamestr.Text;
             mode.JinpoID = JinpoIDstr.Text;
             mode.JinpoIDCar = JinpoIDCarstr.Text;
-            mode.JinpoManey = Convert.ToInt32(JinpoManeyint.Text);
+            try
+            {
+                mode.JinpoManey = Convert.ToInt32(JinpoManeyint.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("请输入正确的金额！重试");
+                return;
+            }
+            
             mode.JinpoPayState = combox_1.Text;
             mode.JinpoAttendState = combox_2.Text;
             mode.JinpoPhone = JinpoPhonestr.Text;
             D_Jinpo Djinpo = new D_Jinpo();
             bool GetResult = Djinpo.AddedWin_Add(mode);
+            if(GetResult)
+            {
+                MessageBox.Show("添加成功");
+            }
+            else
+            {
+                MessageBox.Show("添加失败");
+            }
+            this.Close();
         }
         /// <summary>
         /// 关闭添加窗口

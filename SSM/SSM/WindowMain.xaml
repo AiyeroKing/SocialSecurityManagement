@@ -63,11 +63,11 @@
 
         <!--没点击右键菜单则显示主页-->
         <Grid Name="GridView_0" Visibility="Visible" Grid.Row="3" Grid.Column="1" Background="White">
-            <Label Content="欢迎进入社保管理软件" HorizontalAlignment="Center"   VerticalAlignment="Center" FontSize="48" FontWeight="Bold" FontFamily="Yu Gothic UI" Margin="280,146,266,485"/>
+            <Label Content="欢迎进入社保管理软件" HorizontalAlignment="Center"   VerticalAlignment="Center" FontSize="48" FontWeight="Bold" FontFamily="Yu Gothic UI" Margin="285,146,271,455" Height="89"/>
         </Grid>
 
         <!--点击左键菜单中的参保人员维护-->
-        <Grid Name="GridView_1" Visibility="Visible" Grid.Row="2"   Grid.Column="1"  Margin="0,1,0,0" Grid.RowSpan="2">
+        <Grid Name="GridView_1" Visibility="Hidden" Grid.Row="2"   Grid.Column="1"  Margin="0,1,0,0" Grid.RowSpan="2">
             <Grid Name="GridView_1_left" Visibility="Visible"  Background="White" Grid.Row="0" Grid.Column="0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -99,7 +99,8 @@
 
 
 
-                <DataGrid  Name="DataGrid1"  Grid.Row="1" Grid.Column="0"  AutoGenerateColumns="False"   SelectionMode="Single" VerticalGridLinesBrush="#FFB6B0B0"  DataGridRow.MouseUp="OrderinfodataGrid_Click" SelectedIndex="1" >
+                <DataGrid  Name="DataGrid1"  Grid.Row="1" Grid.Column="0"  AutoGenerateColumns="False" 
+                           SelectionMode="Single" VerticalGridLinesBrush="#FFB6B0B0"  DataGridRow.MouseUp="OrderinfodataGrid_Click" SelectedIndex="1" >
                     <DataGrid.Columns >
                         <DataGridTemplateColumn Header="操作" Width="5*" >
                             <DataGridTemplateColumn.CellTemplate>

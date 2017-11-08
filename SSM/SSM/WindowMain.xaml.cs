@@ -44,7 +44,7 @@ namespace SSM
         public void ExitedProgramedActivited()
         {
             D_Jinpo jinpoDal = new D_Jinpo();
-            List<T_Jinpo> backJinpomodel = new List<T_Jinpo>();
+             List<T_Jinpo> backJinpomodel = new List<T_Jinpo>();
             backJinpomodel = jinpoDal.BlackGroundData_Query();
             this.DataGrid1.ItemsSource = null;
             if (backJinpomodel.Count > 0)
